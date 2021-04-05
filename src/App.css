@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.byte {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+
+}
+
+.container {
+  display: flex;
+  width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px;
+  padding: 3px;
+  background-color: beige;
+}
