@@ -1,0 +1,95 @@
+This is a bit. It can either be on or off.
+Click the bit to turn it on.
+Click the bit again to turn it off
+All the data in all the computers in the world is made up of bits.
+Data is nothing more than bits, each of which can be either on or off.
+A bit can be either on or off. It can't be both; it can't be neither.
+Now we have two bits.
+Each can be either on or off.
+Our single bit could only be in one of two states: on or off.
+But our two bits can be in one of four different states:
+Our bits can both be on, or both off, or the first can be on and the second can be off, or the second can be on and the first can be off.
+By doubling the number of bits, we have quadrupled the number of possible states.
+We can now start to see how bits can be used to represent numbers.
+One bit can only be in one of two different states, and can only represent the numbers zero and one.
+Two bits can be in four different states, and can therefore represent the numbers zero through three
+What is the relationship between the bits and the number that they represent?
+When we had just one bit, it was simple: the number that it represented was equal to the number of bits that were switched on: either zero or one.
+If we wanted to, we make a number system in which the bits do not switch on and off - in which each bit only has one possible state.
+Click on the bit now and you will see that nothing happens.
+In this number system, the value of the number is determined simply by the number of bits.
+This indeed is the first number system we all learn.
+We all learn about numbers by counting. We first understand numbers as amounts.
+Only later do we begin to learn about how numbers can be represented using numerals.
+When we represent numbers as numerals, we are representing amounts.
+Whether a number is represented as binary, decimal, or hexadecimal, it is the same number. Binary, decimal, and hexidecimal are just three different ways of writing the same thing.
+The decimal number system, which we use in everyday life, is a number system in which each digit can be in one of ten different states.
+In any number system, the range of numbers you can represent with a given number of digits is always equal to the number of possible states of each digit raised to the power of the number of digits, starting with zero.
+For instance, in the decimal system, each digit can be in one of ten different states. So if we have two digits, the range of numbers we can represent is equal to ten raised to the power of two, which is a hundred.
+You might ask, if the number of possible states of our digits determines how many different numbers we can represent with a given number of digits, then how come computer bits can only be in two different states? 
+If a bit had more than two different potential states, wouldn't that make it possible to fit more information into a smaller number of bits?
+The answer is that a digit with only two possible states is easy to represent using an electrical circuit. A circuit can be either on or off, and the distinction between on and off can be very clear.
+It is possible to make an electrical computer with three different states - say high, low and off. But to design a circuit that can differentiate between three different states is significantly more complicated and costly, which would far outweigh the added performance of having a digit that can be in three states instead of just two.
+Let's take a look at our bits again. They are both switched off. It's not hard to tell what number this represents. As with one bit, all off means zero.
+Click on both bits, so they are both switched on. What number are we representing now? Let's figure it out.
+In the decimal number system that we are used to using, the first digit is the ones place and the second is the tens place. The first digit tells us how many ones we have, and the second tells us how many tens we have, and the value of our numeral is equivalent to those two numbers added together.
+In the decimal number system, the second digit is called the tens place because each digit can be in one of ten different states.
+In the binary number system, each digit can be in one of only two different states.
+Therefore, in the binary system, the second digit is called the twos place. Just as the tens place tells us how many tens we have, the twos place tells us how many twos we have.
+And as in the decimal system, the first byte in the binary system is called the ones place, and tells us how many ones we have.
+So in our binary number, the first bit tells us how many ones we have, and the second bit tells us how many twos we have.
+If the first bit is on, we have a one. If the second bit is on, we have a two. So if both are on, we have one plus two, i.e. three.
+Now click on the left byte to turn it off, so just the right byte is on. What number do we have now?
+The answer to that question depends entirely on which direction you're counting from. In order to keep things simple, we will say that the first bit, the ones place, is the bit on the right.
+So the number we are currently representing is one.
+If we turn the right byte off and the left byte on, we are representing two.
+Now we have three bits.
+If we have three bits, and each bit can be in one of two states, the range of numbers we can represent is two raised to the power of three, which is eight.
+To make things easier for us, we also have a display that tells us which number we are currently representing.
+We also have a few new buttons.
+Up until now, we have only been toggling the buttons one by one, by clicking on them. We can still do that, but these buttons also give us the power to change all the bits at once.
+The button with the tilde is called the complement button. When you press this button, all of your bits toggle. Any bit that was on is now off, and any bit that was off is now on.
+The button with the less-than sign is called the left-shift button. When you press the left-shift button, all the bit values are shifted to the left by one. Every bit takes on the value of the bit directly to its right. 
+The value of the rightmost bit becomes zero; the value of the leftmost bit is lost.
+The button with the greater-than sign is called the right-shift button. It does the same thing as the left-shift button, but to the right instead of the left.
+These three operations are called bitwise, because they act directly on the bits.
+Take some time to play around with the bitwise operators. 
+Get familiar with how they operate on the bits and how they affect the number that the bits represent.
+You may notice a couple of things.
+First, you will notice that the right shift button, which shifts all the bit values one position to the right, has the effect of halving the number, with halves of odd numbers rounded down to the nearest integer. 
+Six becomes three; so does seven. Four becomes two; so does five.
+Second, you will notice that the complement button has the effect of turning a number into seven minus that number.
+The complement of zero is seven, the complement of one is six, the complement of two is five, and so on.
+Third, you will notice that the left shift button has the effect of doubling the number, with the one complication that the number cannot be more than seven.
+Just as the lowest bit is lost in a right shift, the highest bit is lost in a left shift.
+So we could describe the mathematical effect of the left shift button like this:
+First, double the number. If the number is less than eight, quit. Otherwise, subtract eight from integer.
+There is a more concise way of describing it using the modulus operator, which refers to the remainder left over when you divide one number by another.
+In programming, the modulus operator is usually designated with the percent sign.
+So we would describe the mathematical effect of the left-shift button on number x as (x/2) % 8.
+Now we have four bits.
+Programmers sometimes call this a "nibble", because it's half of a byte.
+Now that we have four bytes, we can represent sixteen different states, from zero through fifteen.
+You will notice that, above our bits, we can see two other reprentations of our number.
+Our four bits can be in sixteen different states.
+The digits of our decimal number system can only be in ten different states.
+So at this point, we will start using the hexadecimal number system.
+We also have two new buttons, increment and decremenet.
+The mathematical effect of the increment and decrement buttons is very simple: the first takes the current number and adds one; the second takes the current number and subtracts one.
+But the bitwise effect of the increment and decremenet buttons is a little bit harder to explain.
+Take a moment to play with the increment and decrement buttons, and observe how the configuration of bit values changes as a result.
+The increment and decrement buttons could be described as selective versions of the complement button.
+Essentially, increment means: starting from the leftmost bit, complement all bits up to and including the first bit that is off.
+Decrement means the same thing except with on instead of off.
+You now have five buttons: left shift, right shift, increment, decrement, complement.
+Each button is a function that takes a number and returns a different number.
+The object of bitgame is to transform a given number into another given number using the five bit operations, in as few moves as possible.
+Right now we have sixteen different possible numbers, which means we have 256 "pairs" of numbers.
+Of those 256, 16 are just the same number twice. Those pairs are not interesting to us.
+The remaining 240 pairs, in which one number is the origin and the other is the goal, can solved using some set of one or more bitmoves.
+Ever pair of numbers has at least one ideal solution. Finding these ideal solutions is the object of the game.
+With four bits, the solutions are mostly very simple. About half can be solved with one bitmove. All but three can be solved with two or fewer.
+Mouse over the goal number to see its bit configuration.
+Here is an example of a pair with a one-move solution:
+Here is an example of a pair with a two-move solution:
+Here is an example of a pair with a three-move solution:

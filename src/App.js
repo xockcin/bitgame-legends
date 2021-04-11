@@ -1,121 +1,41 @@
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 import './App.css';
+import OneBit from './components/OneBit'
+import Byte from './components/Byte'
+import {SCRIPT} from "./shared/script"
 
-const script = [
-  {
-    page: 0,
-    bitCount: 1,
-    text: "This is a byte.",
-  },
-  {
-    page: 1,
-    bitCount: 1,
-    text: "It can either be on or off.",
-  },
-  {
-    page: 2,
-    bitCount: 1,
-    text: "Click the byte to turn it on.",
-  },
-  {
-    page: 3,
-    bitCount: 1,
-    text: "Click it again to turn it off.",
-  },
-  {
-    page: 4,
-    bitCount: 1,
-    text: "All the data in all the computers in the world is made up of bits.",
-  },
-  {
-    page: 5,
-    bitCount: 1,
-    text:
-      "Data is nothing but bits, each of which can be in only one of two states: on or off.",
-  },
-  {
-    page: 6,
-    bitCount: 1,
-    text:
-      "A bit can be either on or off. It can't be both; it can't be neither.",
-  },
-  {
-    page: 7,
-    bitCount: 2,
-    text: "Now we have two bits.",
-  },
-  {
-    page: 8,
-    bitCount: 2,
-    text: "Each one can be either on or off.",
-  },
-  {
-    page: 9,
-    bitCount: 2,
-    text: "Our single bit could be in one of two states: on or off.",
-  },
-  {
-    page: 10,
-    bitCount: 2,
-    text: "But our two bits can be in four different states.",
-  },
-  {
-    page: 11,
-    bitCount: 2,
-    text: "By doubling the number of bits, we have quadrupled the number of possible states",
-  },
-];
-
-const makeByte = (size) => {
-  let result = []
-  for (let i=0; i<size; i++) {
-    result.push(false)
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 0,
+      script: SCRIPT,
+    };
+    this.handlePageTurn = this.handlePageTurn.bind(this);
   }
-  return result
-}
 
-const OneBit = () => {
-  const [isOn, setIsOn] = useState(false)
-  return (
-    <div>
-      <button 
-        onClick={() => setIsOn(!isOn)}
-        style={isOn ? {backgroundColor: "yellow"} : {backgroundColor: "grey"}}>
-        <h3> </h3>
-      </button>
-    </div>
-  );
-}
+  handlePageTurn() {
+    let newPage = this.state.page + 1;
+    this.setState({ page: newPage });
+    console.log("new page: " + this.state.page)
+  }
 
-function App() {
-  const [thisPage, setThisPage] = useState(0)
-
-  const page = script[thisPage]
-
-  const byte = makeByte(page.bitCount).map(bit => {
+  render() {
+    const thisPage = this.state.script[this.state.page]
     return (
-      <div>
-        <OneBit />
+      <div className="container">
+        <Byte
+          size={thisPage.bitCount}
+          number={thisPage.number}
+          toggle={thisPage.toggle}
+        />
+        <p>{thisPage.text}</p>
+        <button
+          onClick={this.handlePageTurn}
+        >Next Page</button>
       </div>
-    )
-  })
-
-  const text = page.text
-
-  return (
-    <div className="container">
-      <div className="byte">
-        {byte}
-      </div>
-      <p>
-        {text}
-      </p>
-      <p>{thisPage}</p>
-      <button onClick={() => setThisPage(thisPage + 1)}>
-        next page
-      </button>
-    </div>
-  )
+    );
+  }
 }
 
 export default App;

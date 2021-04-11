@@ -1,13 +1,13 @@
-.App {
-  display: flex;
-  flex-direction: row;
-}
-
 .byte {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+}
 
+.keypad {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .container {
@@ -15,7 +15,6 @@
   width: 25%;
   flex-direction: column;
   justify-content: center;
-  border: 1px;
-  padding: 3px;
+  padding: 15px;
   background-color: beige;
 }
